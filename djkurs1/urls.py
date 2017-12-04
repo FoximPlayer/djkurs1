@@ -16,12 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from kontrola.views import kontrola_listview
+from kontrola.views import (
+    kontrola_listview,
+    KontrolaListView,
+    KontrolaDetailView
+    )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name = 'home.html')),
-    url(r'^kontrola/$', kontrola_listview),
+    url(r'^kontrola/$', KontrolaListView.as_view()),
+    url(r'^kontrola/(?P<pk>\w+)/$', KontrolaDetailView.as_view()),
     url(r'^cpu/$', TemplateView.as_view(template_name = 'cpu.html')),
     url(r'^mem/$', TemplateView.as_view(template_name = 'mem.html')),
 ]

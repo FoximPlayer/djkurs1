@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load kontrola_extras %}
+{% block title %}{{ block.super }}{% endblock title %}
+
+{% block content %}
+	<h1>{{ object.podzespół }} <small> {{ object.producent }} </small><h1>
+	<p>{{ object.timestamp }}</p>
+	<p>{{ object.timestamp }}, Updated {{ oject.update|timesince }} ago</p>
+{% endblock content %} 
