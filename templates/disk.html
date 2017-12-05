@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load kontrola_extras %}
+{% block title %}{{ block.super }} || Disk{% endblock title %}
+{% block content %}
+	<h1>Disk</h1>
+
+	{% disk %}
+{% endblock content %}

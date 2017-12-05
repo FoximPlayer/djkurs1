@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load kontrola_extras %}
+{% block title %}{{ block.super }} || Processes {% endblock title %}
+{% block content %}
+	<h1>Processes</h1>
+	{% process %}
+{% endblock content %}
+
