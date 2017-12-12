@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% load kontrola_extras %}
 {% block title %}{{ block.super }} || Mem{% endblock title %}
 {% block content %}
-	<h1>Memeory</h1>
+	<h1>Memory</h1>
+	{% mem %}
 {% endblock content %}

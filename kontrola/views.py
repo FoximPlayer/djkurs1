@@ -34,5 +34,3 @@ class KontrolaDetailView(DetailView):
 		print(context)
 		return context
 
-
-

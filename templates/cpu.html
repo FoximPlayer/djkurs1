@@ -1,5 +1,8 @@
 {% extends "base.html" %}
+{% load kontrola_extras %}
 {% block title %}{{ block.super }} || CPU{% endblock title %}
 {% block content %}
 	<h1>CPU</h1>
+	{% cpu %}
 {% endblock content %}
+

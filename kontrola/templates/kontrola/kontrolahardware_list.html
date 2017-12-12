@@ -3,7 +3,7 @@
 {% block content%}
 	<ul>
 		{% for obj in object_list %}
-			<li>{{ obj }}</br>
+			<li><a href='/kontrola/{{obj.slug}}/'>{{ obj }}</a></br>
 				{{ obj.podzespół }} {{ obj.model }} {{ obj.timestemp }} {{ obj.update }}</li>
 		{% endfor %}
 	</ul>

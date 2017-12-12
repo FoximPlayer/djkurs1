@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name = 'home.html')),
     url(r'^kontrola/$', KontrolaListView.as_view()),
-    url(r'^kontrola/(?P<pk>\w+)/$', KontrolaDetailView.as_view()),
+    url(r'^kontrola/(?P<slug>[\w-]+)/$', KontrolaDetailView.as_view()),
     url(r'^cpu/$', TemplateView.as_view(template_name = 'cpu.html')),
     url(r'^mem/$', TemplateView.as_view(template_name = 'mem.html')),
+    url(r'^disk/$', TemplateView.as_view(template_name = 'disk.html')),
+    url(r'^proc/$', TemplateView.as_view(template_name = 'proc.html')),
 ]

@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.signals import pre_save, post_save
+from .utils import unique_slug_generator
 
 # Create your models here.
 class KontrolaHardware(models.Model):
@@ -11,6 +13,15 @@ class KontrolaHardware(models.Model):
 	def __str__(self):
 		return self.podzespol
 
-	@property
-	def podzespol(self):
-		return self.podzespol
+def hd_pre_save_receiver(sender, instance, *args, **kwargs):
+	print('Saving...')
+	print(instance.timestamp)
+
+def hd_post_save_receiver(sender, instance, created, *args, **kwargs):
+	if not instance.slug:
+		instance.slug = unique_slug_generator(instance)
+		instance.save()
+
+pre_save.connect(hd_pre_save_receiver, sender = KontrolaHardware)
+
+post_save.connect(hd_post_save_receiver, sender = KontrolaHardware)
