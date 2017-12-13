@@ -13,7 +13,6 @@ procs = {p.pid: p.info for p in psutil.process_iter(attrs=['name', 'pid', 'usern
 processes = procs
 
 
-
 @register.simple_tag
 def ctime(format_string):
     return datetime.datetime.now().strftime(format_string)
